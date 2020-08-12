@@ -2,6 +2,7 @@ package com.cavista.sample
 
 import androidx.multidex.MultiDexApplication
 import com.cavista.sample.di.component.DaggerApplicationComponent
+import com.cavista.sample.service.INetworkClientService
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasAndroidInjector
@@ -14,7 +15,8 @@ class MainApplication : MultiDexApplication() , HasAndroidInjector {
 
     @Inject
     lateinit var dispatchingAndroidInjector: DispatchingAndroidInjector<Any>
-
+    @Inject
+    lateinit var networkService: INetworkClientService
 
     override fun androidInjector(): AndroidInjector<Any> {
         return dispatchingAndroidInjector
@@ -23,6 +25,7 @@ class MainApplication : MultiDexApplication() , HasAndroidInjector {
     override fun onCreate() {
         super.onCreate()
         initDagger()
+        initNetworkClient()
     }
 
     private fun initDagger() {
@@ -31,5 +34,10 @@ class MainApplication : MultiDexApplication() , HasAndroidInjector {
             .build()
             .inject(this)
     }
+
+    private fun initNetworkClient() {
+        networkService.setupNetworkClient(BuildConfig.URL)
+    }
+
 
 }

@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.cavista.sample">
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
     <application
         android:name=".MainApplication"
@@ -10,7 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".presentation.SplashActivity">
+        <activity android:name=".presentation.SplashActivity" android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,7 +22,9 @@
         </activity>
         <activity
             android:name=".presentation.view.SearchActivity"
-            android:windowSoftInputMode="stateHidden" />
+            android:screenOrientation="fullSensor"
+            android:configChanges="orientation"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
     </application>
 
 </manifest>

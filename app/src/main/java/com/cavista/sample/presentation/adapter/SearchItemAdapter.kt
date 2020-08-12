@@ -9,7 +9,6 @@ import com.cavista.sample.presentation.customeview.CustomRecyclerViewAdapter
 import com.cavista.sample.presentation.customeview.OnRecyclerObjectClickListener
 
 class SearchItemAdapter(context: Context) : CustomRecyclerViewAdapter<UISearchData, OnRecyclerObjectClickListener<UISearchData>, SearchItemViewHolder>(context) {
-
     override fun getId(position: Int): String {
         return getItemAt(position).id
     }
@@ -20,7 +19,7 @@ class SearchItemAdapter(context: Context) : CustomRecyclerViewAdapter<UISearchDa
                 R.layout.search_item,
                 parent,
                 false
-            ), adapter = this@SearchItemAdapter
+            )
         )
     }
 

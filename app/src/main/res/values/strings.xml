@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">Cavista Sample App</string>
+    <string name="app_name">Cavista Search App</string>
+    <string name="search_hint">Please use search icon to find items.</string>
+    <string name="no_result_msg">Oops!! No result Found, Search again with other keywords</string>
 </resources>

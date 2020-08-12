@@ -12,6 +12,38 @@
         android:id="@+id/searchItemListView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_margin="@dimen/_12dp"
         android:layout_below="@+id/searchView" />
+
+
+    <TextView
+        android:id="@+id/noSearchText"
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        android:layout_margin="@dimen/_16dp"
+        android:padding="@dimen/_12dp"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:textSize="20sp"
+        style="@style/TextBodyStyleBold"
+        android:textColor="@color/colorBlack"
+        android:background="@drawable/white_bg"
+        android:text="@string/search_hint">
+    </TextView>
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorBlack"
+        android:layout_centerInParent="true">
+
+        <ProgressBar
+            android:id="@+id/progressbar"
+            android:layout_width="@dimen/progress_width"
+            android:layout_height="@dimen/progress_height"
+            android:indeterminateTint="@color/colorWhite"
+            android:visibility="gone"
+            />
+    </FrameLayout>
 
 </RelativeLayout>

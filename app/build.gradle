@@ -56,16 +56,18 @@ dependencies {
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
+    //Support
     implementation "com.android.support:multidex:$multidexVersion"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-
     implementation "androidx.appcompat:appcompat:$appcompactVersion"
     implementation "androidx.core:core-ktx:$ktxCoreVersion"
     implementation "androidx.constraintlayout:constraintlayout:$constraintLayoutVersion"
     implementation "com.google.android.material:material:$materialDesignVersion"
+    implementation "androidx.recyclerview:recyclerview:$recyclerviewVersion"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutineVersion"
+    implementation "androidx.cardview:cardview:$cardViewVersion"
 
-
-
+    //Testing
     testImplementation "junit:junit:$junitVer"
     androidTestImplementation "androidx.test.ext:junit:$androidJunitrVer"
     androidTestImplementation "androidx.test.espresso:espresso-core:$espressoCoreVersion"
@@ -73,21 +75,20 @@ dependencies {
     androidTestImplementation "androidx.test:rules:$testRule"
     testImplementation "com.nhaarman:mockito-kotlin:${mockitoKotlinVersion}"
 
+
+    //Lifecycle
     implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle"
     kapt "androidx.lifecycle:lifecycle-compiler:$lifecycle"
 
 
-    implementation "androidx.recyclerview:recyclerview:$recyclerviewVersion"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutineVersion"
-    implementation "androidx.cardview:cardview:$cardViewVersion"
-
+    //Dagger
     kapt "com.google.dagger:dagger-compiler:$daggerVersion"
     kapt "com.google.dagger:dagger-android-processor:$daggerVersion"
-
     implementation "com.google.dagger:dagger:$daggerVersion"
     implementation "com.google.dagger:dagger-android-support:$daggerVersion"
     compileOnly "javax.annotation:jsr250-api:$javaxAnnotationVersion"
 
+    //Retrofit
     implementation "com.squareup.retrofit2:converter-gson:${retrofitVersion}"
     implementation "com.squareup.retrofit2:retrofit:${retrofitVersion}"
     implementation "com.squareup.okhttp3:logging-interceptor:${retrofitLoggerVersion}"
@@ -95,7 +96,15 @@ dependencies {
     implementation "com.google.code.gson:gson:$gsonVersion"
     implementation "com.squareup.okhttp3:okhttp:$okHttp3Version"
 
+    //Glide
     implementation "com.github.bumptech.glide:glide:${glideVersion}"
     kapt "com.github.bumptech.glide:compiler:${glideVersion}"
 
+    // RXJava
+    implementation "io.reactivex.rxjava2:rxkotlin:$rxKotlinVersion"
+    implementation "io.reactivex.rxjava2:rxjava:$rxJavaVersion"
+    implementation "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion"
+
+    //Paging
+    implementation "androidx.paging:paging-runtime:$pagingVersion"
 }

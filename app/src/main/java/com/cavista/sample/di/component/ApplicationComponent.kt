@@ -2,9 +2,7 @@ package com.cavista.sample.di.component
 
 import android.app.Application
 import com.cavista.sample.MainApplication
-import com.cavista.sample.di.modules.ActivityModule
-import com.cavista.sample.di.modules.AppModule
-import com.cavista.sample.di.modules.ViewModelModuleDI
+import com.cavista.sample.di.modules.*
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjectionModule
@@ -27,7 +25,11 @@ import javax.inject.Singleton
         AppModule::class,
         AndroidInjectionModule::class,
         ActivityModule::class,
-        ViewModelModuleDI::class]
+        ViewModelModuleDI::class,
+        NetworkModule::class,
+        ExecuterModule::class,
+        RepositoryModule::class,
+        UserPreferenceModule::class]
 )
 
 interface ApplicationComponent {
