@@ -25,7 +25,6 @@ class MainApplication : MultiDexApplication() , HasAndroidInjector {
         initDagger()
     }
 
-
     private fun initDagger() {
         DaggerApplicationComponent.builder()
             .application(this)

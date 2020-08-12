@@ -4,6 +4,7 @@ import android.app.Application
 import com.cavista.sample.MainApplication
 import com.cavista.sample.di.modules.ActivityModule
 import com.cavista.sample.di.modules.AppModule
+import com.cavista.sample.di.modules.ViewModelModuleDI
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjectionModule
@@ -25,7 +26,8 @@ import javax.inject.Singleton
     modules = [
         AppModule::class,
         AndroidInjectionModule::class,
-        ActivityModule::class]
+        ActivityModule::class,
+        ViewModelModuleDI::class]
 )
 
 interface ApplicationComponent {
