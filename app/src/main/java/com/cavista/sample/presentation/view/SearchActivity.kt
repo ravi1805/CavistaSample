@@ -10,14 +10,14 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.cavista.sample.R
 import com.cavista.sample.domain.model.UISearchData
 import com.cavista.sample.domain.request.SearchItemRequest
+import com.cavista.sample.navigation.ClassNavigation
 import com.cavista.sample.presentation.BaseActivity
 import com.cavista.sample.presentation.adapter.SearchItemAdapter
 import com.cavista.sample.presentation.customeview.OnRecyclerObjectClickListener
+import com.cavista.sample.presentation.utils.*
 import com.cavista.sample.presentation.utils.DebounceQueryTextListener
-import com.cavista.sample.presentation.utils.Resource
-import com.cavista.sample.presentation.utils.ResourceState
-import com.cavista.sample.presentation.utils.ViewModelFactory
 import com.cavista.sample.presentation.viewmodel.SearchViewModel
+import com.google.gson.Gson
 import dagger.android.AndroidInjection
 import kotlinx.android.synthetic.main.activity_search.*
 import javax.inject.Inject
@@ -71,11 +71,17 @@ class SearchActivity : BaseActivity() {
         }
         searchItemAdapter.setListener(object : OnRecyclerObjectClickListener<UISearchData> {
             override fun onItemClicked(item: UISearchData, position: Int, operationId: Int) {
-
+              //Implementation not needed
             }
 
             override fun onRowClicked(item: UISearchData, position: Int) {
-
+                val bundle = Bundle()
+                bundle.putString(AppUtils.item_key, Gson().toJson(item))
+                ClassNavigation.navigateScreen(
+                    this@SearchActivity,
+                    SearchDetailsActivity::class.java,
+                    false ,bundle
+                )
             }
         })
 

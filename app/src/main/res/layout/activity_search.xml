@@ -12,38 +12,36 @@
         android:id="@+id/searchItemListView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="@dimen/_12dp"
-        android:layout_below="@+id/searchView" />
+        android:layout_below="@+id/searchView"
+        android:layout_margin="@dimen/_12dp" />
 
 
     <TextView
         android:id="@+id/noSearchText"
+        style="@style/TextBodyStyleBold"
         android:layout_width="wrap_content"
         android:layout_height="150dp"
-        android:layout_margin="@dimen/_16dp"
-        android:padding="@dimen/_12dp"
         android:layout_centerInParent="true"
-        android:gravity="center"
-        android:textSize="20sp"
-        style="@style/TextBodyStyleBold"
-        android:textColor="@color/colorBlack"
+        android:layout_margin="@dimen/_16dp"
         android:background="@drawable/white_bg"
-        android:text="@string/search_hint">
-    </TextView>
+        android:gravity="center"
+        android:padding="@dimen/_12dp"
+        android:text="@string/search_hint"
+        android:textColor="@color/colorBlack"
+        android:textSize="20sp"></TextView>
 
     <FrameLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/colorBlack"
-        android:layout_centerInParent="true">
+        android:layout_centerInParent="true"
+        android:background="@color/colorBlack">
 
         <ProgressBar
             android:id="@+id/progressbar"
             android:layout_width="@dimen/progress_width"
             android:layout_height="@dimen/progress_height"
             android:indeterminateTint="@color/colorWhite"
-            android:visibility="gone"
-            />
+            android:visibility="gone" />
     </FrameLayout>
 
 </RelativeLayout>

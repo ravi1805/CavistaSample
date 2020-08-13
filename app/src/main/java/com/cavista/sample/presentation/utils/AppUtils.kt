@@ -22,7 +22,7 @@ import kotlin.coroutines.CoroutineContext
 object AppUtils {
 
     const val noNetworkMsg = "Oops!! Not connected to internet."
-
+    const val item_key = "ITEM_KEY"
     /**
      * @param context activity reference
      * @param imageUrl image web url
@@ -44,6 +44,11 @@ object AppUtils {
                 })
 
         }
+    }
+
+    fun getCurrentDateNTime(): String {
+        val sdf = SimpleDateFormat("MM/dd/yyyy, hh:mm a")
+        return sdf.format(Date())
     }
 
 }

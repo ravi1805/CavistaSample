@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.view.SearchDetailsActivity">
+
+    <ImageView
+        android:id="@+id/searchItemImgView"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="@dimen/_16dp"
+        android:src="@drawable/cavista_logo" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/commentRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/inputMsgLayout"
+        android:layout_below="@+id/searchItemImgView"
+        android:layout_marginStart="@dimen/_16dp"
+        android:layout_marginRight="@dimen/_16dp" />
+
+    <TextView
+        android:id="@+id/noCommentView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        style="@style/TextBodyStyleBold"
+        android:textSize="20sp"
+        android:visibility="gone"
+        android:text="No Comments found!!" />
+
+    <LinearLayout
+        android:id="@+id/inputMsgLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="@dimen/_16dp"
+        android:background="@drawable/white_bg"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <EditText
+            android:id="@+id/editCommentField"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="0.95"
+            android:background="@android:color/transparent"
+            android:hint="Send Comments"
+            android:imeOptions="actionDone"
+            android:padding="@dimen/_8dp"
+            android:textColor="@color/colorBlack"
+            android:textColorHint="@color/gray_color" />
+
+        <ImageButton
+            android:id="@+id/btnSend"
+            android:layout_width="@dimen/_32dp"
+            android:layout_height="@dimen/_32dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/_24dp"
+            android:background="@drawable/button_effect" />
+    </LinearLayout>
+
+</RelativeLayout>

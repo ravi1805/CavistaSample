@@ -3,8 +3,11 @@ package com.cavista.sample.di.modules;
 import androidx.annotation.NonNull;
 import androidx.lifecycle.ViewModel;
 
+import com.cavista.sample.domain.usecase.GetCommentUseCase;
+import com.cavista.sample.domain.usecase.PostCommentUseCase;
 import com.cavista.sample.domain.usecase.SearchItemUseCase;
 import com.cavista.sample.presentation.utils.ViewModelFactory;
+import com.cavista.sample.presentation.viewmodel.SearchDetailViewModel;
 import com.cavista.sample.presentation.viewmodel.SearchViewModel;
 import com.cavista.sample.service.INetworkClientService;
 
@@ -42,6 +45,14 @@ public class ViewModelModuleDI {
     @ViewModelKey(SearchViewModel.class)
     ViewModel searchViewModel(@NonNull SearchItemUseCase searchItemUseCase, INetworkClientService iNetworkClientService) {
         return new SearchViewModel(searchItemUseCase, iNetworkClientService);
+    }
+
+    @NonNull
+    @Provides
+    @IntoMap
+    @ViewModelKey(SearchDetailViewModel.class)
+    ViewModel searchDetailViewModel(@NonNull PostCommentUseCase postCommentUseCase, GetCommentUseCase getCommentUseCase) {
+        return new SearchDetailViewModel(getCommentUseCase, postCommentUseCase);
     }
 
 }
