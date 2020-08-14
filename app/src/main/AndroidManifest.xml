@@ -31,9 +31,7 @@
 
         <activity
             android:name=".presentation.view.SearchDetailsActivity"
-            android:configChanges="orientation"
             android:parentActivityName=".presentation.view.SearchActivity"
-            android:screenOrientation="fullSensor"
             android:windowSoftInputMode="stateHidden|adjustPan" />
 
     </application>
