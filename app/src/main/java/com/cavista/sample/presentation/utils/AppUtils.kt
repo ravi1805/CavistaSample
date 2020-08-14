@@ -47,7 +47,7 @@ object AppUtils {
     }
 
     fun getCurrentDateNTime(): String {
-        val sdf = SimpleDateFormat("MM/dd/yyyy, hh:mm a")
+        val sdf = SimpleDateFormat("dd/MM/yyyy, hh:mm a")
         return sdf.format(Date())
     }
 

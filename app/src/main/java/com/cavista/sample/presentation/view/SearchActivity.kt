@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.cavista.sample.R
 import com.cavista.sample.domain.model.UISearchData
 import com.cavista.sample.domain.request.SearchItemRequest
-import com.cavista.sample.navigation.ClassNavigation
+import com.cavista.sample.navigation.Navigation
 import com.cavista.sample.presentation.BaseActivity
 import com.cavista.sample.presentation.adapter.SearchItemAdapter
 import com.cavista.sample.presentation.customeview.OnRecyclerObjectClickListener
@@ -77,7 +77,7 @@ class SearchActivity : BaseActivity() {
             override fun onRowClicked(item: UISearchData, position: Int) {
                 val bundle = Bundle()
                 bundle.putString(AppUtils.item_key, Gson().toJson(item))
-                ClassNavigation.navigateScreen(
+                Navigation.navigateScreen(
                     this@SearchActivity,
                     SearchDetailsActivity::class.java,
                     false ,bundle

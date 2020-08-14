@@ -12,8 +12,7 @@ import com.cavista.sample.service.INetworkClientService
 import getOrAwaitValue
 import io.reactivex.Observable
 import io.reactivex.observers.TestObserver
-import org.junit.Assert.assertNotNull
-import org.junit.Assert.assertTrue
+import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
@@ -33,8 +32,7 @@ class SearchViewModelTest {
     @Mock
     private lateinit var searchItemUseCase: SearchItemUseCase
 
-    @Mock
-    private lateinit var searchItemRequest: SearchItemRequest
+    private  var searchItemRequest: SearchItemRequest = SearchItemRequest("Cats",1)
 
     @Mock
     private lateinit var iNetworkClientService: INetworkClientService
@@ -56,6 +54,17 @@ class SearchViewModelTest {
         searchViewModel = SearchViewModel(searchItemUseCase, iNetworkClientService)
         searchViewModel.searchItemLiveData.observeForever(resultObserver)
     }
+
+    @Test
+    fun testTagTrue(){
+        assertTrue(searchViewModel.TAG == "SearchViewModel")
+    }
+
+    @Test
+    fun testTagFalse(){
+        assertFalse(searchViewModel.TAG == "SearchView")
+    }
+
 
     @Test
     fun `handle search data observer`(){
@@ -94,5 +103,6 @@ class SearchViewModelTest {
         searchListObserver.onNext(searchList)
 
     }
+
 
 }

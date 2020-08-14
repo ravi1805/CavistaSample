@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.view.WindowManager
 import com.cavista.sample.R
-import com.cavista.sample.navigation.ClassNavigation
+import com.cavista.sample.navigation.Navigation
 import com.cavista.sample.presentation.view.SearchActivity
 
 private const val SPLASH_SCREEN_TIMEOUT = 3000L
@@ -25,7 +25,7 @@ class SplashActivity : BaseActivity() {
 
     private fun startSearchListActivity() {
         Handler().postDelayed({
-            ClassNavigation.navigateScreen(this, SearchActivity::class.java, true)
+            Navigation.navigateScreen(this, SearchActivity::class.java, true)
             overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
             finish()
         }, SPLASH_SCREEN_TIMEOUT)

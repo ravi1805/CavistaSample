@@ -3,7 +3,7 @@ package com.cavista.sample.data.preferences
 import android.content.Context
 import javax.inject.Inject
 
-class UserPreference @Inject constructor(val context: Context) : AbstractPreference() {
+open class UserPreference @Inject constructor(val context: Context) : AbstractPreference() {
     init {
         setPreferenceName(context, SecureSharedPrefs.prefName.USER_INFO)
     }

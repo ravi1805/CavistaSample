@@ -68,15 +68,15 @@ dependencies {
     implementation "androidx.cardview:cardview:$cardViewVersion"
 
     //Testing
-    implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     testImplementation "junit:junit:$junitVer"
     androidTestImplementation "androidx.test.ext:junit:$androidJunitrVer"
     androidTestImplementation "androidx.test.espresso:espresso-core:$espressoCoreVersion"
     implementation "androidx.test.espresso:espresso-idling-resource:$espressoCoreVersion"
     androidTestImplementation "androidx.test:rules:$testRule"
     testImplementation "com.nhaarman:mockito-kotlin:${mockitoKotlinVersion}"
-    testImplementation "androidx.test:core:1.0.0"
+    testImplementation "androidx.test:core:$testCore"
+    implementation "android.arch.core:core-testing:$arch_core_test_v"
+    implementation "com.android.support.test:runner:$test_runner"
 
     //Lifecycle
     implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle"
@@ -109,5 +109,5 @@ dependencies {
 
     //Paging
     implementation "androidx.paging:paging-runtime:$pagingVersion"
-    implementation 'android.arch.core:core-testing:1.1.0'
+
 }

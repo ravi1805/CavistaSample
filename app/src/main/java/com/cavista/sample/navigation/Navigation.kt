@@ -6,7 +6,7 @@ import android.os.Bundle
 import com.cavista.sample.R
 import kotlin.jvm.internal.Intrinsics
 
-object ClassNavigation {
+object Navigation {
 
     fun navigateScreen(
         callerActivity: Activity,

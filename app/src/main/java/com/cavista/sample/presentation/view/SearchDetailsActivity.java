@@ -110,6 +110,7 @@ public class SearchDetailsActivity extends BaseActivity {
     }
 
     private void handleResponse(List<CommentDataModel> commentList) {
+        hideKeyboard(editTextSendComment);
         if (commentList.isEmpty()) {
             displayNoCommentView();
         } else {
@@ -120,7 +121,7 @@ public class SearchDetailsActivity extends BaseActivity {
 
     @Override
     public boolean onSupportNavigateUp() {
-        onBackPressed();
+       onBackPressed();
         return true;
     }
 
